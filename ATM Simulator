@@ -1,0 +1,24 @@
+# atm simulator
+balance = int(input("Enter your balance: "))
+y=int(input("Enter 1 to check balance, 2 to deposit money, 3 to withdraw money:"))
+
+def check_balance(balance):
+    print("Your balance is: ", balance)
+
+def deposit():
+    amount=int(input("Enter your amount: "))
+    amount+=balance
+    print("Your new balance is: ", amount)
+
+def withdraw():
+    x=int(input("Enter your amount:"))
+    x-=balance()
+    print("Your new balance is: ", x)
+
+match y:
+    case 1:
+        check_balance(balance)
+    case 2:
+        deposit()
+    case 3:
+        withdraw()
