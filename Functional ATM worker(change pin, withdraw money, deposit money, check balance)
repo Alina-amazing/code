@@ -1,0 +1,41 @@
+"""46. ATM Machine
+Outer Function
+ATM()
+Inner Functions
+withdraw()
+deposit()
+balance()
+change_pin()
+"""
+def ATM():
+    pin=input("Enter PIN: ")
+    b=float(input("Enter Balance: "))
+    if pin =="1234":
+        x=int(input("Enter 1-withdraw\n Enter 2-deposit\n Enter 3-check balance\n Enter 4-change_pin"))
+        match x:
+            case 1:
+                def withdraw():
+                    nonlocal b
+                    w=int(input("Enter amount to withdraw: "))
+                    b-=w
+                    print("New Balance: ",b)
+                withdraw()
+            case 2:
+                def deposit():
+                    nonlocal b
+                    d=int(input("Enter amount to deposit: "))
+                    b+=d
+                    print("New Balance: ",b)
+                deposit()
+            case 3:
+                def balance():
+                    print("New Balance: ",b)
+                balance()
+            case 4:
+                pin=input("Enter PIN: ")
+                if pin =="1234":
+                    z=input("Enter new pin: ")
+    else:
+        print("Wrong PIN")
+if __name__=="__main__":
+    ATM()
